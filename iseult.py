@@ -1749,7 +1749,7 @@ class MainApp(Tk.Tk):
         self.IsCbarList = []
 
         # The dictionary that holdsd the paths
-        self.PathDict = {'Flds': [], 'Prtl': [], 'Param': [], 'Spect': []}
+        self.PathDict = {'Flds': [], 'Prtl': [], 'Param': [], 'Spect': [], 'Tie.tot':[]}
 
         # A dictionary that allows use to see in what HDF5 file each key is stored.
         # i.e. {'ui': 'Prtl', 'ue': 'Flds', etc...},  Originally I generated the
@@ -1841,7 +1841,17 @@ class MainApp(Tk.Tk):
                           u'time': 'Param',
                           u'splitratio': 'Param',
                           u'indi': 'Prtl',
-                          u'ppc0': 'Param'}
+                          u'ppc0': 'Param',
+                          u'delgami':'Param',
+                          u'Txxe': 'Tie.tot',
+                          u'Tyye': 'Tie.tot',
+                          u'Tzze': 'Tie.tot',
+                          u'Te'  : 'Tie.tot',
+                          u'Txxi': 'Tie.tot',
+                          u'Tyyi': 'Tie.tot',
+                          u'Tzzi': 'Tie.tot',
+                          u'Ti'  : 'Tie.tot'
+                          }
 
         # Create the figure
         self.f = Figure(figsize = (2,2), dpi = 100, edgecolor = 'none')#, facecolor = '0.75')
@@ -2010,7 +2020,7 @@ class MainApp(Tk.Tk):
                               'FFTRight': 200.0,
                               'ClearFig': True,
                               'HorizontalCbars': False,
-                              'DivColorMap': 'BuYlRd',
+                              'DivColorMap': 'RdBu_r',
                               'LinkK': True,
                               'PrtlIntegrationRelative': True,
                               'PowerLawElectronMax': 10.0,
